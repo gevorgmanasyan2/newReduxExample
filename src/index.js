@@ -43,6 +43,22 @@ import store from './store';
 
 // store.dispatch({type:'todos/todoAdded',payload:'Try creating a store'})
 
-console.log("Dispatching action");
-store.dispatch({type:'todos/todoAdded',payload:'Learn about actions'})
-console.log("Dispatch complete");
+// console.log("Dispatching action");
+// store.dispatch({type:'todos/todoAdded',payload:'Learn about actions'})
+// console.log("Dispatch complete");
+
+
+// store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+// // log: 'Hi!'
+
+// console.log('State after dispatch: ', store.getState())
+// // log: {todos: [...], filters: {status, colors}, meaningOfLife: 42}
+
+store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+
+
+
+
+
+
+
