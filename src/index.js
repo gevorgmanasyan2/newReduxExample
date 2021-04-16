@@ -1,15 +1,20 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './index.css';
-// import App from './App';
-// import reportWebVitals from './reportWebVitals';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {Provider} from 'react-redux';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
+import store from './store';
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+    <App />
+    </Provider>
+    
+  </React.StrictMode>,
+  document.getElementById('root')
+);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
@@ -18,7 +23,7 @@
 
 
 
-import store from './store';
+// import store from './store';
 
 // console.log("initial state ", store.getState());
 
@@ -54,7 +59,7 @@ import store from './store';
 // console.log('State after dispatch: ', store.getState())
 // // log: {todos: [...], filters: {status, colors}, meaningOfLife: 42}
 
-store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
+// store.dispatch({ type: 'todos/todoAdded', payload: 'Learn about actions' })
 
 
 

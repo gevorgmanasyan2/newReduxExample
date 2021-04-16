@@ -1,7 +1,11 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Header from './features/header/Header';
+import TodoList from './features/todos/TodoList';
+import Footer from './features/footer/Footer';
 import {createStore} from 'redux';
+
 
 function App(){
 
@@ -9,15 +13,18 @@ function App(){
     <div className="App">
       <nav>
         <section>
-          <h1>Redux Fundamentals Example</h1>
-
-          <div className="navContent">
-            <div className="navLinks"></div>
-          </div>
+          <h1>Redux Fundamentals Example</h1>          
         </section>
       </nav>
-      <section>
-        <h2>Welcome to the Redux Fundamentals example app!</h2>
+      <section className="medium-container">
+        
+        <h2>Todos</h2>
+        <div className="todoapp">
+          <Header/>
+          <TodoList/>
+          <Footer/>
+          
+        </div>
       </section>
     </div>
   )
