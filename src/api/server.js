@@ -69,7 +69,7 @@ new Server({
 
     this.post('/todos', function (schema, req) {
       const data = this.normalizedRequestAttrs()
-
+     
       if (data.text === 'error') {
         throw new Error('Could not save the todo!')
       }
