@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+import {saveNewTodo} from '../todos/todosSlice';
 
 
 
@@ -12,11 +13,20 @@ const Header=()=>{
         setText(e.target.value)
     }
     const handleKeyDown=e=>{
-        const trimmedText=e.target.value.trim();
-        if(e.key==="Enter" && trimmedText){
-          dispatch({type:'todos/todoAdded',payload:trimmedText});
-          setText('');
+        const trimmedText=text.trim();
+        // if(e.key==="Enter" && trimmedText){
+        //   dispatch({type:'todos/todoAdded',payload:trimmedText});
+        //   setText('');
+    // }
+        //if the user passes the enter key
+        if(e.which===13 && trimmedText){
+            //Create the thunk function with the text the user wrote
+            const saveNewTodoThunk=saveNewTodo(trimmedText)
+            //Then dispatch the thunk function itself
+            dispatch(saveNewTodoThunk)
+            setText('')
         }
+        
     }
     return(
         <header className="header">
